@@ -10,6 +10,7 @@ public class Sorter {
                 }
             }
         }
+
        for (int i = 0; i < unsorted.length - 1; i++) {
            System.out.print(unsorted[i] + " ");
        }
