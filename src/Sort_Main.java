@@ -1,7 +1,8 @@
 public class Sort_Main {
 
     public static void main(int[] args) {
-            Sorter.sort(args); // calling sort method from Sorter.java
+            Sorter sorter = new Sorter();
+            sorter.sort(args); // calling sort method from Sorter.java
             System.out.println();
     }
 
@@ -15,7 +16,7 @@ public class Sort_Main {
                 System.err.println("Failed trying to parse a non-numeric argument, " + arr[i]);
                }
             }
-          main(arr); // calling main method
+          main(arr); // calling int main method
         }
 
 }
