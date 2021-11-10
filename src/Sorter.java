@@ -1,20 +1,15 @@
 public class Sorter {
-    public static void sort(int[] unsorted) {
+    public static int[] sort(int[] unsorted) {
+        int temp = 0;
         for (int i = 0; i < unsorted.length; i++) {
-            int temp;
-            for (int j = 0; j < unsorted.length; j++) {
-                if (unsorted[i] < unsorted[j]){
+            for (int j = i + 1; j < unsorted.length; j++) {
+                if (unsorted[j] < unsorted[i]) {
                     temp = unsorted[i];
                     unsorted[i] = unsorted[j];
                     unsorted[j] = temp;
                 }
             }
         }
-
-       for (int i = 0; i < unsorted.length - 1; i++) {
-           System.out.print(unsorted[i] + " ");
-       }
-          System.out.print(unsorted[unsorted.length - 1]);
-        //return new Object[0];
+        return unsorted;
     }
 }
