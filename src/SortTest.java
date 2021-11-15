@@ -1,53 +1,48 @@
+import java.util.Arrays;
+
 public class SortTest {
     public static void main(String[] args) {
-        //Test1
-        System.out.println("Test1");
-        int[] arr1 = Sorter.sort(new int[]{55, -11, -50, 100});
-        System.out.println("expected: -50 -11 55 100");
-        System.out.print("Received: ");
-        for (int i = 0; i < arr1.length ; i++) {
-            System.out.print(arr1[i] + " ");
-        }
+        //test 1
+        System.out.println("test 1");
+        int[] arr1 = {30, 0, 4, 100};
+        int[] expected = {30, 0, 4, 100};
+        test(arr1, expected);
 
-        //Test2
-        System.out.println("");
-        System.out.println("Test2");
-        int[] arr2 = Sorter.sort(new int[]{76, 11, -55, 2, 16, -21, 7, 88});
-        System.out.println("expected: -55 -21 2 7 11 16 76 88");
-        System.out.print("Received: ");
-        for (int i = 0; i < arr2.length ; i++) {
-            System.out.print(arr2[i] + " ");
-        }
+        //test 2
+        System.out.println("test 2");
+        int[] arr2 = {20, 0, -4, 100, 30};
+        int[] expected2 = {-4, 0, 20, 30, 100};
+        test(arr2, expected2);
 
-        //Test3
-        System.out.println("");
-        System.out.println("Test3");
-        int[] arr3 = Sorter.sort(new int[]{2, 16, -21, 7, 88});
-        System.out.println("expected: -21 2 7 16 88");
-        System.out.print("Received: ");
-        for (int i = 0; i < arr3.length ; i++) {
-            System.out.print(arr3[i] + " ");
-        }
+        //test 3
+        System.out.println("test 3");
+        int[] arr3 = {};
+        int[] expected3 = {};
+        test(arr3, expected3);
 
-        //Test4
-        System.out.println("");
-        System.out.println("Test4");
-        int[] arr4 = Sorter.sort(new int[]{4, -1, 0, -4, 1});
-        System.out.println("expected: -4 -1 0 1 4");
-        System.out.print("Received: ");
-        for (int i = 0; i < arr4.length ; i++) {
-            System.out.print(arr4[i] + " ");
-        }
+        //test 4
+        System.out.println("test 4");
+        int[] arr4 = {-55, -2, -4};
+        int[] expected4 = {-55, -4, -2};
+        test(arr4, expected4);
 
-        //Test5
-        System.out.println("");
-        System.out.println("Test5");
-        int[] arr5 = Sorter.sort(new int[]{10, 1, -29, 5, 89, 22});
-        System.out.println("expected: -29 1 5 10 22 89");
-        System.out.print("Received: ");
-        for (int i = 0; i < arr5.length ; i++) {
-            System.out.print(arr5[i] + " ");
-        }
+        //test 5
+        System.out.println("test 5");
+        int[] arr5 = {33, 11, 1, 4};
+        int[] expected5 = {11, 1, 33, 4};
+        test(arr5, expected5);
     }
+
+        public static void test(int[] arr, int[] expected) {
+            Sorter.sort(arr);
+            System.out.println("Reserved: " + Arrays.toString(arr));
+            System.out.println("expected: " + Arrays.toString(expected));
+            if(Arrays.equals(arr,expected)){
+                System.out.println("Success result");
+            }
+            if(!Arrays.equals(arr,expected)){
+                System.out.println("Failed result");
+            }
+        }
 
 }
